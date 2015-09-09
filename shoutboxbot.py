@@ -13,7 +13,7 @@ server = '172.26.16.1'
 port = 6667
 
 
-class TestBot(SingleServerIRCBot):
+class ShoutboxBot(SingleServerIRCBot):
     def __init__(self, channel, nickname, server, port=6667):
         SingleServerIRCBot.__init__(self, [(server, port)], nickname, nickname)
         self.channel = channel
@@ -61,7 +61,7 @@ def main():
     import sys
     global bot
     init()
-    bot = TestBot(channel, nick, server, port)
+    bot = ShoutboxBot(channel, nick, server, port)
     poll()
     bot.start()
 
